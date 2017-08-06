@@ -9,11 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var counter = 0
+    
+    @IBOutlet weak var Label_1: UILabel!
+    @IBAction func Button_1(_ sender: UIButton) {
+        
+        Label_1.text = String(counter)
+        counter += 1
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
