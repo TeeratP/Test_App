@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var Label_1: UILabel!
     @IBAction func Button_1(_ sender: UIButton) {
         
-        Label_1.text = String(counter)
-        counter += 1
-        
+        Label_1.text = "Answer is: \(Double(Text_1.text!)! + Double(Text_2.text!)!)"
     }
+    
+    @IBOutlet weak var Text_1: UITextField!
+    @IBOutlet weak var Text_2: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
