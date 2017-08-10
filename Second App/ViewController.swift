@@ -12,7 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var TableView_1: UITableView!
     
-    var emojis = ["😀","😡","😩","😍","😇","😵"]
+    var coins =  ["ETH", "SIB", "LBC", "ZCL", "ZEC", "SIGT"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +23,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return emojis.count
+        return coins.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = emojis[indexPath.row]
+        cell.textLabel?.text = coins[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let emoji = emojis[indexPath.row]
-        performSegue(withIdentifier: "moveSegue", sender: emoji)
+        let coin = coins[indexPath.row]
+        performSegue(withIdentifier: "moveSegue", sender: coin)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(sender)
+        let def_vc = segue.destination as! DefinitionViewController
+        def_vc.coin = sender as! String
+        
     }
     
     override func didReceiveMemoryWarning() {

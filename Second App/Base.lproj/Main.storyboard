@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--Definition View Controller-->
         <scene sceneID="msn-OM-h46">
             <objects>
-                <viewController id="6Ow-tz-JXD" sceneMemberID="viewController">
+                <viewController id="6Ow-tz-JXD" customClass="DefinitionViewController" customModule="Second_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W3a-5K-gUg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +71,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LlJ-vI-UYv"/>
                     </view>
+                    <connections>
+                        <outlet property="Coin_info" destination="v2i-Qt-hzZ" id="Vd1-WG-ECi"/>
+                        <outlet property="Coin_name" destination="sVq-yt-ai5" id="1E2-dE-fN3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDF-AN-pZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
