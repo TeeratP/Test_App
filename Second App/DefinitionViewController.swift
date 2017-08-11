@@ -19,11 +19,27 @@ class DefinitionViewController: UIViewController {
         super.viewDidLoad()
 
         Coin_name.text = coin
+        let mapp = ["ETH" : "151", "SIB": "169", "LBC": "164", "ZCL": "167", "ZEC": "166", "SIGT": "191"]
         
+        let urlString = "https://whattomine.com/coins/" + mapp[coin]! + ".json"
         
+        guard let url = URL(string: urlString) else {return}
         
+        var getStr = ""
         
-        // Do any additional setup after loading the view.
+        URLSession.shared.dataTask(with: url) { (data, resp, err) -> Void in
+            
+            guard let data = data else {return}
+            
+            let dataString = String(data: data, encoding: .utf8)
+            
+            getStr = dataString!
+            
+            print(dataString)
+            }.resume()
+        
+        Coin_info.text = getStr
+        
     }
 
     override func didReceiveMemoryWarning() {
